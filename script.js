@@ -14,7 +14,7 @@ const blockData=[
     {imageSrc: 'images/niagara falls.png',city:'Niagara Falls', modalId:'info-11', location:'Canada, Jul 2019, Niagara Falls'},
     {imageSrc: 'images/quebec city.png', city:'Quebec City', modalId:'info-12', location:'Canada, Mar 2023, Le Château Frontenac'},
     {imageSrc: 'images/montreal.png', city:'Montreal', modalId:'info-13', location:'Canada, Mar 2023, Amphitrite'},
-    {imageSrc: 'images/Madrid.png', city:'Madrid', modalId:'info-14', location:'Spain, Dec 2019, Plaza Mayor'},
+    {imageSrc: 'images/madrid.png', city:'Madrid', modalId:'info-14', location:'Spain, Dec 2019, Plaza Mayor'},
     {imageSrc: 'images/amsterdam.png', city:'Amsterdam', modalId:'info-15', location:'Netherlands, Jan 2019, Royal Palace Amsterdam (Koninklijk Paleis Amsterdam)'},
 
     {imageSrc: 'images/salzburg.png', city:'Salzburg', modalId:'info-16', location:'Austria, Dec 2018, Mirabell Palace'},
