@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="images/travelicon.png" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+
+    <title>My Travel Collection</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+    <script>
+
+      const closePopUp = ()=>{
+          const popUp = document.getElementById("pop-up-wrapper");
+          popUp.style.display = "none"
+          document.body.style.overflow = "scroll";
+      }
+  </script>
+    
+  </head>
+  <body>
+    
+    <!-- this is the start of content -->
+    
+    <div class="title">
+        My Travel Collection
+    </div>
+
+    <div id="blocks_container">
+
+    </div>
+
+    <div id="pop-up-wrapper" onclick="closePopUp()">
+      <div id="exit-button" >
+      </div>
+      <div id="pop-up-data">
+
+      </div>
+      
+  </body>
+</html>
