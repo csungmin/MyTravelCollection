@@ -30,7 +30,6 @@ body.pop-up-activated {
     max-width: 100%;
   }
   
-  /* YOUR CSS GOES AFTER THIS */
   
   .title {
     width: 100%;
@@ -145,9 +144,9 @@ body.pop-up-activated {
 }
 
 
+
   /* MEDIA QUERIES */
-  
-  
+
   @media all and (min-width: 768px) {
   /* Medium devices (landscape tablets, 768px and up) */
     
