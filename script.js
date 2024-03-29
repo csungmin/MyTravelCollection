@@ -84,6 +84,7 @@ blockList.forEach((block) => {
 const activatePopUp = function (city,location, imageSrc) {
   const popUp = document.getElementById("pop-up-wrapper");
   popUp.style.display = "block";
+    popUp.scrollTop = 0;
 
   popUpDisplay.innerHTML = `
   <h2>${city}</h2>
