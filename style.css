@@ -1,6 +1,4 @@
-/* a minimalist set of CSS resets */
 
-/* default to border-box */
 html {
     box-sizing: border-box;
   }
@@ -13,17 +11,20 @@ body.pop-up-activated {
  overflow: hidden;
 }
 
-  /* adjust typography defaults */
+
   body {
-    background-color: #efefef;
+    /* background-color: #efefef; */
+    background-color:#c1dcf6;
     margin: 1rem;
     line-height: 1.5;
     font-family: "Sriracha";
     font-weight: 400;
     font-style: normal;
+    background-image: url('images/cloud.png');
+    background-position: center center;
   }
+
   
-  /* images and videos max out at full width */
   img,
   video {
     height: auto;
@@ -31,18 +32,17 @@ body.pop-up-activated {
   }
   
   
-  .title {
+.title {
     width: 100%;
-    background-color: #fae4fb;
+    /* background-color: #c1dcf6; */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5rem;
-    font-size: 28px;
-  }
+    padding: 3rem;
+    font-size: 60px;
+}
+
   
-
-
 
 /* blocks */
 #blocks_container{
@@ -85,11 +85,8 @@ body.pop-up-activated {
     color: #000000;
     font-size: 30px;
     background-color: #ffffff;
+    
 
-  /*   background-image: ; */
-    background-size: cover;
-    background-position: center center;
-    transform: scale(1);
     transition: transform 200ms cubic-bezier(0, 0.55, 0.45, 1);
   }
 
@@ -97,11 +94,11 @@ body.pop-up-activated {
 
 
 
-  .block-c {
+  /* .block-c {
     position: relative;
     width: 100%;
     padding-top: 0%;
-  }
+  } */
 
   .block:hover {
     transform: scale(1.025);
@@ -113,63 +110,61 @@ body.pop-up-activated {
   }
   
 
-
+/* button */
+  .button {
+    width: 100%;
+    /* background-color: #000000; */
+    display: flex;
+    justify-content: left;
+    padding: 0.5rem;
+  }
+  
 
 
 /* new ways for popup */
-
-  #pop-up-wrapper{
-    display: none;
-    background-color: rgba(186, 186, 186, 0.925);
-    
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 70%;
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
+#pop-up-wrapper {
+  display: none;
+  background-color: rgba(186, 186, 186, 0.925);
+  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 700px;
+  max-height: 80%;
+  overflow: auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-#exit-button{
-    font-size: 45px;
-    padding: 15px;
-    cursor: pointer;
-}
 
 .popup-image {
-  width: 60%;
-  border-radius: 3px;
+  width: 100%;
+  height:auto;
+}
+
+#pop-up-data {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 
 
 
-  /* MEDIA QUERIES */
-
-  @media all and (min-width: 768px) {
-  /* Medium devices (landscape tablets, 768px and up) */
-    
-    .container {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* Different display size */
+  
+  @media all and (max-width: 661px) {
+  #blocks_container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     
   }
   
-  @media all and (min-width: 992px) {
-  /* Large devices (laptops/desktops, 992px and up) */
-    
-    .container {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-    
-  }
-  
-  @media all and (min-width: 1200px) {
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-    
-    .container {
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+  @media all and (max-width: 430px) {
+  #blocks_container {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
     }
     
   }

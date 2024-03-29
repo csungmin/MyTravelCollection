@@ -36,13 +36,24 @@ const blockData=[
 
 const containerEl = document.querySelector("#blocks_container");
 const popUpDisplay = document.getElementById("pop-up-data");
+const randomBlocksBtn = document.querySelector("#random_blocks_btn");
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// create
 
 function createBlocks() {
   containerEl.innerHTML = "";
 
   blockData.forEach((data, i) => {
     let blockEl = `
-        <div class="block block-c" data-modal="${data.modalId}" data-location="${data.location}" data-city="${data.city}">
+        <div class="block" data-modal="${data.modalId}" data-location="${data.location}" data-city="${data.city}">
           <div class="block-pics">
             <img src="${data.imageSrc}" alt="${data.city}">
           </div>
@@ -58,7 +69,8 @@ function createBlocks() {
 
 createBlocks();
 
-const blockList = document.querySelectorAll(".block-c");
+
+const blockList = document.querySelectorAll(".block");
 
 blockList.forEach((block) => {
   block.addEventListener("click", (event) => {
@@ -80,3 +92,40 @@ const activatePopUp = function (city,location, imageSrc) {
   `;
 };
 
+
+
+// random 
+
+function randomBlocks() {
+  const shuffledBlockData = shuffleArray(blockData);
+
+  containerEl.innerHTML = ""; 
+
+  shuffledBlockData.forEach((data, i) => {
+    let blockEl = `
+        <div class="block" data-modal="${data.modalId}" data-location="${data.location}" data-city="${data.city}">
+          <div class="block-pics">
+            <img src="${data.imageSrc}" alt="${data.city}">
+          </div>
+          <div class="block-text">
+            <span>${data.city}</span>
+          </div>
+        </div>
+    `;
+
+    containerEl.insertAdjacentHTML('beforeend', blockEl);
+  });
+
+  const blockList = document.querySelectorAll(".block");
+  blockList.forEach((block) => {
+    block.addEventListener("click", (event) => {
+      const city = block.dataset.city;
+      const location = block.dataset.location;
+      const imageSrc = block.querySelector('img').src;
+      activatePopUp(city,location, imageSrc);
+    });
+  });
+}
+
+
+randomBlocksBtn.addEventListener("click", randomBlocks);
