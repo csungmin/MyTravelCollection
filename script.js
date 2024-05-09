@@ -129,4 +129,31 @@ function randomBlocks() {
 }
 
 
+
+// for top frame
 randomBlocksBtn.addEventListener("click", randomBlocks);
+
+const frameCityEl = document.getElementById("frame-city");
+const frameLocationEl = document.getElementById("frame-location");
+const frameImageEl = document.getElementById("frame-image");
+
+
+function displayRandomContent() {
+  const randomIndex = Math.floor(Math.random() * blockData.length);
+  const { city, location, imageSrc } = blockData[randomIndex];
+  frameCityEl.textContent = city;
+  frameLocationEl.textContent = location;
+  
+
+  frameImageEl.src = imageSrc;
+}
+
+
+const frameEl = document.getElementById("frame");
+
+frameEl.addEventListener("click", () => {
+  displayRandomContent();
+});
+
+displayRandomContent();
+
